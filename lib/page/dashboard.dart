@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tes/pertemuan/pertemuan5.dart';
 import 'package:flutter_tes/pertemuan/pertemuan6.dart';
 import 'package:flutter_tes/pertemuan/pertemuan7.dart';
-import 'package:flutter_tes/pertemuan/pertemuan8.dart';
+// import 'package:flutter_tes/pertemuan/pertemuan8.dart';
 
 
 class DashboardPage extends StatelessWidget {
@@ -17,13 +17,13 @@ class DashboardPage extends StatelessWidget {
       "title": "Pertemuan 6",
       "icon": Icons.auto_stories,
       "color": Colors.green,
-     // "page": CheckboxPage(),
+      "page": CheckboxPage(),
     },
     {
       "title": "Pertemuan 7",
       "icon": Icons.auto_stories,
       "color": Colors.orange,
-      // "page": RadiobuttonPage(),
+      "page": RadiobuttonPage(),
     },
     {
       "title": "Pertemuan 8",

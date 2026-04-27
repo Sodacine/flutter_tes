@@ -38,6 +38,7 @@ dependencies:
   simple_alert_dialog: ^1.0.1
   cherry_toast: ^1.13.0
   image_picker: ^1.2.1
+  fluttertoast: ^9.0.0
 
 dev_dependencies:
   flutter_test:
