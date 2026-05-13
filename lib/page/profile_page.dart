@@ -20,7 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
   String email = 'rkencana110@gmail.com';
   String phone = '+62 123-4567-22';
   String birthday = 'Dec 13, 2005';
-  String occupation = 'Student Infromation Syste at Universitas Pamulang';
+  String occupation = 'Student Infromation System at Universitas Pamulang';
   
   // Support both network URL and local file
   String? avatarUrl;

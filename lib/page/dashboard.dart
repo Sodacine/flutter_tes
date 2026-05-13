@@ -1,35 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tes/pertemuan/pertemuan1.dart';
+import 'package:flutter_tes/pertemuan/pertemuan2.dart';
+import 'package:flutter_tes/pertemuan/pertemuan3.dart';
+import 'package:flutter_tes/pertemuan/pertemuan4.dart';
 import 'package:flutter_tes/pertemuan/pertemuan5.dart';
 import 'package:flutter_tes/pertemuan/pertemuan6.dart';
 import 'package:flutter_tes/pertemuan/pertemuan7.dart';
-// import 'package:flutter_tes/pertemuan/pertemuan8.dart';
-
+import 'package:flutter_tes/pertemuan/pertemuan8.dart';
 
 class DashboardPage extends StatelessWidget {
   final List<Map<String, dynamic>> menuItems = [
     {
-      "title": "Pertemuan 5",
+      "title": "Pertemuan1",
       "icon": Icons.auto_stories,
-      "color": Colors.blue,
-      "page": ListviewPage(), 
+      "color": Colors.red,
+      "page": HelloWorldPage(),
     },
     {
-      "title": "Pertemuan 6",
+      "title": "Pertemuan2",
+      "icon": Icons.auto_stories,
+      "color": Colors.blue,
+      "page": WidgetButtonPage(),
+    },
+    {
+      "title": "Pertemuan3",
+      "icon": Icons.auto_stories,
+      "color": Colors.green,
+      "page": ScaffoldNavigatorPage(),
+    },
+    {
+      "title": "Pertemuan4",
+      "icon": Icons.auto_stories,
+      "color": Colors.orange,
+      "page": ToastDialogPage(),
+    },
+    {
+      "title": "Pertemuan5",
+      "icon": Icons.auto_stories,
+      "color": Colors.grey,
+      "page": ListviewPage(),
+    },
+    {
+      "title": "Pertemuan6",
       "icon": Icons.auto_stories,
       "color": Colors.green,
       "page": CheckboxPage(),
     },
     {
-      "title": "Pertemuan 7",
+      "title": "Pertemuan7",
       "icon": Icons.auto_stories,
       "color": Colors.orange,
-      "page": RadiobuttonPage(),
+      "page": RadioButtonPage(),
     },
     {
-      "title": "Pertemuan 8",
+      "title": "Pertemuan8",
       "icon": Icons.auto_stories,
       "color": Colors.purple,
-      // "page": AutocompleteSpinPage(),
+      "page": AutocompletespinPage(),
     },
   ];
 
@@ -37,6 +64,7 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
+
       appBar: AppBar(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -46,20 +74,21 @@ class DashboardPage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.blueAccent,
         title: Text(
-          'Dashboard',
+          "Dashboard",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
           itemCount: menuItems.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: 16,
             crossAxisSpacing: 16,
-            childAspectRatio: 3,
+            mainAxisSpacing: 16,
+            mainAxisExtent: 170,
           ),
           itemBuilder: (context, index) {
             final item = menuItems[index];
@@ -69,8 +98,12 @@ class DashboardPage extends StatelessWidget {
               icon: item['icon'],
               color: item['color'],
               onTap: () {
-                // Action klik
-                Navigator.push(context, MaterialPageRoute(builder: (context) => item['page']));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => item['page'],
+                  ),
+                );
               },
             );
           },
@@ -79,14 +112,16 @@ class DashboardPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuCard(BuildContext context,
-      {required String title,
-      required IconData icon,
-      required Color color,
-      required VoidCallback onTap}) {
-    return Material(
+  Widget _buildMenuCard(
+    BuildContext context, {
+    required String title,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return Card(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(20),
+      
       elevation: 5,
       shadowColor: Colors.black26,
       child: InkWell(
@@ -101,7 +136,7 @@ class DashboardPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
+                  color: color.withOpacity(0.1),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -111,6 +146,7 @@ class DashboardPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 15),
+
               Text(
                 title,
                 textAlign: TextAlign.center,
