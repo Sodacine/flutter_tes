@@ -7,6 +7,7 @@ import 'package:flutter_tes/pertemuan/pertemuan5.dart';
 import 'package:flutter_tes/pertemuan/pertemuan6.dart';
 import 'package:flutter_tes/pertemuan/pertemuan7.dart';
 import 'package:flutter_tes/pertemuan/pertemuan8.dart';
+import 'package:flutter_tes/pertemuan/pertemuan9.dart';
 
 class DashboardPage extends StatelessWidget {
   final List<Map<String, dynamic>> menuItems = [
@@ -57,6 +58,12 @@ class DashboardPage extends StatelessWidget {
       "icon": Icons.auto_stories,
       "color": Colors.purple,
       "page": AutocompletespinPage(),
+    },
+    {
+      "title": "Pertemuan9",
+      "icon": Icons.auto_stories,
+      "color": Colors.pink,
+      "page": Pertemuan9Page(),
     },
   ];
 
